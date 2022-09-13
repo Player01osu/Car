@@ -1,0 +1,25 @@
+[package]
+name = "car-arduino"
+version = "0.1.0"
+
+[[bin]]
+name = "car-arduino"
+test = false
+bench = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
+
+[dependencies]
+panic-halt = "*"
+arduino-hal = { "git" = "https://github.com/Rahix/avr-hal", "rev" = "4cbb163", "features" = ["arduino-uno"] }
