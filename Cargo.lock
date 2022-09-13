@@ -74,7 +74,16 @@ dependencies = [
 ]
 
 [[package]]
-name = "car-arduino"
+name = "car-bin"
+version = "0.1.0"
+dependencies = [
+ "arduino-hal",
+ "car-lib",
+ "panic-halt",
+]
+
+[[package]]
+name = "car-lib"
 version = "0.1.0"
 dependencies = [
  "arduino-hal",
